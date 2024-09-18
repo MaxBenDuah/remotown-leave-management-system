@@ -3,7 +3,6 @@ import { useLogin } from "./useLogin";
 import { useEffect, useRef, useState } from "react";
 import { useGetCurrentUser } from "./useGetCurrentUser";
 import { useUserDataContext } from "../../contexts/UserContext";
-import { FloatLabel } from "primereact/floatLabel";
 import { InputText } from "primereact/inputtext";
 import { Link } from "react-router-dom";
 import { Password } from "primereact/password";
@@ -11,6 +10,7 @@ import { Divider } from "primereact/divider";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import Loader from "../../ui/Loader";
+import { FloatLabel } from "primereact/floatlabel";
 
 function LoginForm() {
   // john.doe@example.com 12345678
