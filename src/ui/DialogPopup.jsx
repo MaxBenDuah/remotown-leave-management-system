@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useCreateNewLeaveRequest } from "../features/employees/useCreateNewLeaveRequest";
 import { Dialog } from "primereact/dialog";
-import { FloatLabel } from "primereact/floatLabel";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Button } from "primereact/button";
 import { ProgressSpinner } from "primereact/progressspinner";
+import { FloatLabel } from "primereact/floatlabel";
 
 function DialogPopup({ setVisible, visible, data, toast }) {
   const [startDate, setStartDate] = useState("");
