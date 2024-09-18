@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { useForgottenPassword } from "./useForgottenPassword";
-import { FloatLabel } from "primereact/floatLabel";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import { Link } from "react-router-dom";
+import { FloatLabel } from "primereact/floatlabel";
 
 function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
