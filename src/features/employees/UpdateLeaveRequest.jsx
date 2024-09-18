@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useUpdateLeaveRequest } from "./useUpdateLeaveRequest";
-import { FloatLabel } from "primereact/floatLabel";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "primereact/button";
+import { FloatLabel } from "primereact/floatlabel";
 
 // setEditId
 
