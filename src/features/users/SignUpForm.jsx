@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUp } from "./useSignUp";
 
-import { FloatLabel } from "primereact/floatLabel";
 import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { Dropdown } from "primereact/dropdown";
@@ -11,6 +10,7 @@ import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import Loader from "../../ui/Loader";
 import { Image } from "primereact/image";
+import { FloatLabel } from "primereact/floatlabel";
 
 const loginData = [
   {
