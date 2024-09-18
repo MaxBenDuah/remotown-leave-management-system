@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { useUpdateCurrentUser } from "./useUpdateCurrentUser";
-import { FloatLabel } from "primereact/floatLabel";
 import { Password } from "primereact/password";
 import { Divider } from "primereact/divider";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
+import { FloatLabel } from "primereact/floatlabel";
 
 function UpdateUserPassword() {
   const [password, setPassword] = useState("");
