@@ -11,12 +11,7 @@ function UpdateUserDataForm({ userData: { name, email } }) {
   const [updateName, setUpdateName] = useState(name);
   const [avatar, setAvatar] = useState(null);
 
-  const {
-    mutate: updateUser,
-    isPending: isUpdating,
-    // isError,
-    // error,
-  } = useUpdateCurrentUser();
+  const { mutate: updateUser, isPending: isUpdating } = useUpdateCurrentUser();
 
   function handleSubmit(e) {
     e.preventDefault();
