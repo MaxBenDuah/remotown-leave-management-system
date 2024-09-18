@@ -1,9 +1,9 @@
 import { Divider } from "primereact/divider";
-import UpdateUserDataForm from "./updateUserDataForm";
 import UpdateUserPassword from "./UpdateUserPassword";
 import { useUser } from "./useUser";
 import { Button } from "primereact/button";
 import { useMoveBack } from "../../hooks/useMoveBack";
+import UpdateUserDataForm from "./UpdateUserDataForm";
 
 function Account() {
   const { user } = useUser();
