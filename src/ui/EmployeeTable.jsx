@@ -11,9 +11,10 @@ import { useGetLeaveRequest } from "../features/employees/useGetLeaveRequest";
 import { useDeleteLeaveRequest } from "../features/employees/useDeleteLeaveRequest";
 import { useSearchParams } from "react-router-dom";
 import { Dialog } from "primereact/dialog";
-import UpdateLeaveRequest from "../features/employees/UpdateLeaveRequest";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import { ProgressSpinner } from "primereact/progressspinner";
+
+import UpdateLeaveRequest from "../features/employees/UpdateLeaveRequest";
 
 function EmployeeTable({ data, deleteToast, updateToast }) {
   const [allLeaveRequests, setAllLeaveRequests] = useState([]);
@@ -57,13 +58,13 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
 
   // Own function start here
   const openLeaveEditDialog = (leave) => {
-    setSelectedLeave(leave); // Set the leave request to be edited
-    setLeaveDialog(true); // Show the dialog
+    setSelectedLeave(leave);
+    setLeaveDialog(true);
   };
 
   const hideLeaveDialog = () => {
     setLeaveDialog(false);
-    setSelectedLeave(null); // Clear the selected leave after hiding
+    setSelectedLeave(null);
   };
 
   const handleLeaveUpdate = (updatedLeave) => {
@@ -107,13 +108,11 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
   };
 
   function handleDelete(id) {
-    // console.log(id);
     confirmDialog({
       message: "Are you sure you want to delete this leave request?",
       header: "Confirmation",
       icon: "pi pi-exclamation-triangle",
       accept: () => {
-        // console.log(id);
         deleteLeaveRequest(id, {
           onSuccess: () => {
             deleteToast.current.show({
@@ -145,7 +144,6 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
   }
 
   const actionBodyTemplate = (rowData) => {
-    // console.log(rowData.id);
     return (
       <React.Fragment>
         <Button
@@ -231,11 +229,7 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
   return (
     <div className="border-round-3xl overflow-hidden shadow-2 bg-white">
       <div className="card">
-        <Toolbar
-          className="mb-4"
-          // left={leftToolbarTemplate}
-          end={rightToolbarTemplate}
-        ></Toolbar>
+        <Toolbar className="mb-4" end={rightToolbarTemplate}></Toolbar>
         <ConfirmDialog />
 
         {dialogVisible ? (

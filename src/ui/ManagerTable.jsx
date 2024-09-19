@@ -9,12 +9,13 @@ import { InputIcon } from "primereact/inputicon";
 import { InputText } from "primereact/inputtext";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
-import { useUpdateLeaveRequestByManager } from "../features/employees/useUpdateLeaveRequestByManager";
 import supabase from "../services/supabase";
 import { useSearchParams } from "react-router-dom";
-import { useUser } from "../features/users/useUser";
-import { useGetEmployee } from "../features/employees/useGetEmployee";
 import { Dialog } from "primereact/dialog";
+
+import { useGetEmployee } from "../features/employees/useGetEmployee";
+import { useUser } from "../features/users/useUser";
+import { useUpdateLeaveRequestByManager } from "../features/employees/useUpdateLeaveRequestByManager";
 
 function ManagerTable({ allLeaveRequest }) {
   const [leaveRequest] = useState(allLeaveRequest);
@@ -22,19 +23,9 @@ function ManagerTable({ allLeaveRequest }) {
   const [globalFilter, setGlobalFilter] = useState(null);
   const toast = useRef(null);
   const dt = useRef(null);
-  const {
-    mutate: updateLeaveRequest,
-    // isPending: isUpdating,
-    // isError: isError2,
-    // error: error2,
-  } = useUpdateLeaveRequestByManager();
+  const { mutate: updateLeaveRequest } = useUpdateLeaveRequestByManager();
   const { user } = useUser();
-  const {
-    data: managersData,
-    // isLoading,
-    // isError,
-    // error,
-  } = useGetEmployee(user);
+  const { data: managersData } = useGetEmployee(user);
   const [searchParams, setSearchParams] = useSearchParams();
   const [dialogVisible, setDialogVisible] = useState(false);
 

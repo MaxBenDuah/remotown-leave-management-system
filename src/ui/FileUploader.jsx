@@ -164,7 +164,6 @@ function FileUploader({ setAvatar }) {
       <FileUpload
         ref={fileUploadRef}
         name="demo[]"
-        // url="/api/upload"
         multiple
         accept="image/*"
         maxFileSize={1000000}

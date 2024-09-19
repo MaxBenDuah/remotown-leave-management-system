@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import Notifications from "../features/employees/Notifications";
 import { useUser } from "../features/users/useUser";
 import { CaretDown, Notification } from "@phosphor-icons/react";
 import { Tooltip } from "primereact/tooltip";
@@ -8,8 +7,9 @@ import { Toast } from "primereact/toast";
 import { useLogout } from "../features/users/useLogout";
 import { useNavigate } from "react-router-dom";
 
+import Notifications from "../features/employees/Notifications";
+
 function InnerHeading() {
-  // const [showNotification, setShowNotification] = useState(false);
   const { user } = useUser();
   const { avatar, name } = user.user_metadata;
   const [visible, setVisible] = useState(false);
@@ -18,16 +18,10 @@ function InnerHeading() {
   const toast = useRef(null);
   const navigate = useNavigate();
 
-  const {
-    mutate: logout,
-    // isPending,
-    isError: isError2,
-    error: error2,
-  } = useLogout();
+  const { mutate: logout, isError: isError2, error: error2 } = useLogout();
 
   const items = [
     {
-      // label: 'Options',
       items: [
         {
           label: "Settings",
@@ -61,19 +55,16 @@ function InnerHeading() {
   }
 
   return (
-    // border-solid border-purple-500 border-3
     <div className="flex justify-content-between align-items-center border-bottom-1 border-300">
       <h2 className="font-medium">Dashboard</h2>
       <div>
         <div className="flex align-items-center">
-          {/* Notification icon */}
           <div className="h-3rem w-3rem hover:surface-200 flex align-items-center justify-content-center border-circle transition-all transition-duration-300 transition-ease-out cursor-pointer">
             <Notification
               size={28}
               weight="light"
               onClick={() => show("top-right")}
               className="notifications"
-              // target=".notifications"
               data-pr-tooltip="Notifications"
               data-pr-position="bottom"
             />

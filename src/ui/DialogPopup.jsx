@@ -68,7 +68,6 @@ function DialogPopup({ setVisible, visible, data, toast }) {
           }
           setVisible(false);
         },
-        // onError we get access to the error object which is the same as the error object we get from useCreateNewLeaveRequest() so it's better to use it here in a toast
         onError: (error) => {
           if (toast && toast.current) {
             toast.current.show({
