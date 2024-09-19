@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import { useUpdateCurrentUser } from "./useUpdateCurrentUser";
 import { InputText } from "primereact/inputtext";
-import FileUploader from "../../ui/FileUploader";
 import { Toast } from "primereact/toast";
 import { Button } from "primereact/button";
 import { FloatLabel } from "primereact/floatlabel";
+
+import FileUploader from "../../ui/FileUploader";
 
 function UpdateUserDataForm({ userData: { name, email } }) {
   const toast = useRef(null);

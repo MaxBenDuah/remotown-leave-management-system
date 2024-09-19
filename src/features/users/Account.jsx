@@ -1,8 +1,9 @@
 import { Divider } from "primereact/divider";
-import UpdateUserPassword from "./UpdateUserPassword";
 import { useUser } from "./useUser";
 import { Button } from "primereact/button";
 import { useMoveBack } from "../../hooks/useMoveBack";
+
+import UpdateUserPassword from "./UpdateUserPassword";
 import UpdateUserDataForm from "./UpdateUserDataForm";
 
 function Account() {

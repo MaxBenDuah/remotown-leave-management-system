@@ -9,11 +9,11 @@ import { Password } from "primereact/password";
 import { Divider } from "primereact/divider";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
-import Loader from "../../ui/Loader";
 import { FloatLabel } from "primereact/floatlabel";
 
+import Loader from "../../ui/Loader";
+
 function LoginForm() {
-  // john.doe@example.com 12345678
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userProfile, setUserProfile] = useState(null);
@@ -106,14 +106,10 @@ function LoginForm() {
       <Toast ref={toast} position="top-center" />
       {isPending && <Loader />}
       <div
-        // className="flex justify-content-center align-items-center h-screen"
         className="mx-auto overflow-hidden shadow-3 border-round-lg mt-8"
         style={{ maxWidth: "1280px" }}
       >
-        <div
-          className="grid"
-          // style={{ maxWidth: "1024px" }}
-        >
+        <div className="grid">
           <div className="col-12 p-8 lg:col-6">
             <form onSubmit={handleSubmit}>
               <div className="pb-4">
