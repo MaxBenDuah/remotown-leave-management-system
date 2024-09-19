@@ -1,10 +1,8 @@
-// import { useDeleteNotification } from "./useDeleteNotification";
 import { EnvelopeOpen } from "@phosphor-icons/react";
 import { useMarkNotificationAsRead } from "./useMarkNotificationAsRead";
 import { Tooltip } from "primereact/tooltip";
 import { format, formatDistanceToNow } from "date-fns";
 import { de } from "date-fns/locale";
-// import { Badge } from "primereact/badge";
 
 function NotificationItem({ notification }) {
   const {
@@ -34,16 +32,7 @@ function NotificationItem({ notification }) {
       ? timeAgo
       : germanFormattedDate;
 
-  // const {
-  //   mutate: deleteNotification,
-  //   isPending: isDeleting,
-  //   isError: isError3,
-  //   error: error3,
-  // } = useDeleteNotification();
-
   if (isError2) return <p>{error2.message}</p>;
-
-  // if (isError3) return <p>{error3.message}</p>;
 
   return (
     <li
@@ -67,33 +56,12 @@ function NotificationItem({ notification }) {
               data-pr-tooltip="Mark as read"
               data-pr-position="bottom"
               className="mark-as-read"
-
-              // tooltip="Mark as read"
-              // tooltipOptions={{ position: "bottom" }}
             />
             <Tooltip target=".mark-as-read" style={{ fontSize: "0.8rem" }} />
-            {/* <Tooltip target=".custom-target-icon" />
-          <i
-            className="custom-target-icon pi pi-envelope p-text-secondary p-overlay-badge"
-            data-pr-tooltip="No notifications"
-            data-pr-position="right"
-            data-pr-at="right+5 top"
-            data-pr-my="left center-2"
-            style={{ fontSize: "2rem", cursor: "pointer" }}
-          >
-            <Badge severity="danger"></Badge>
-          </i> */}
           </button>
         )}
       </div>
       <p className="text-sm">{displayTime}</p>
-      {/* I wouldn't need this because now when i delete the leave request, it simultaneously deletes the notificatons */}
-      {/* <button
-        onClick={() => deleteNotification(notification.id)}
-        disabled={isDeleting}
-      >
-        Delete
-      </button> */}
     </li>
   );
 }
