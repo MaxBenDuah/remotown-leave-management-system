@@ -3,10 +3,11 @@ import { useGetAllLeaveRequest } from "../features/employees/useGetAllLeaveReque
 import { useGetEmployee } from "../features/employees/useGetEmployee";
 import { useUser } from "../features/users/useUser";
 import { useEffect } from "react";
+import { Envelope, UserCircleGear, UsersFour } from "@phosphor-icons/react";
+
 import ManagerTable from "../ui/ManagerTable";
 import TimeAndDate from "../ui/TimeAndDate";
 import Holidays from "../ui/Holidays";
-import { Envelope, UserCircleGear, UsersFour } from "@phosphor-icons/react";
 import Loader from "../ui/Loader";
 
 function ManagerDashboard() {

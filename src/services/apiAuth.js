@@ -1,14 +1,6 @@
 import supabase, { supabaseUrl } from "./supabase";
 
-export async function signUpUser({
-  email,
-  password,
-  role,
-  name,
-  department,
-  // leave_balance, - i don't need this because i'm setting a default value for it
-  // status,
-}) {
+export async function signUpUser({ email, password, role, name, department }) {
   let { data, error } = await supabase.auth.signUp({
     email,
     password,
@@ -33,12 +25,10 @@ export async function signUpUser({
       .insert([{ email, role, name, department }]);
 
     if (insertError) {
-      console.error(
-        "Error inserting into employees table:",
-        insertError.message
+      throw new Error(
+        `Error inserting into employees table - ${insertError.message}`
       );
     }
-    // else {console.log("Employee record created successfully");}
   }
 
   return data;
@@ -76,17 +66,14 @@ export async function userLogout() {
 }
 
 export async function updateCurrentUser({ password, updateName, avatar }) {
-  // console.log(updateName, avatar, avatar.name);
   // 1. Update Password OR Name
   let updateData = {};
 
   if (password) updateData = { password };
 
-  // if (updateName) updateData = { date: { name: updateName } }; previous. i just realised there was a typo, it should have been data not date above, lol... this was giving me the error!
   if (updateName) updateData.data = { name: updateName };
 
   const { data, error } = await supabase.auth.updateUser(updateData);
-  // console.log(data);
 
   if (error)
     throw new Error(
@@ -98,7 +85,7 @@ export async function updateCurrentUser({ password, updateName, avatar }) {
     const { error: updateNameError } = await supabase
       .from("employees")
       .update({ name: updateName })
-      .eq("email", data.user.email); // Assuming the employee's id matches the user's id
+      .eq("email", data.user.email);
 
     if (updateNameError) {
       throw new Error(
@@ -106,8 +93,6 @@ export async function updateCurrentUser({ password, updateName, avatar }) {
       );
     }
   }
-
-  // console.log(data);
 
   if (!avatar) return data;
 
@@ -123,17 +108,11 @@ export async function updateCurrentUser({ password, updateName, avatar }) {
       `There was a problem uploading the avatar - ${storageError.message}`
     );
 
-  // 3. Update avatar in the user
-
-  // https://unjfpbxmseuokgzzqbko.supabase.co/storage/v1/object/public/avatars/avatar-7285335e-a068-410b-bbcf-c124a748ee60-0.6420373753115627
-
   const { data: updatedUser, error: error2 } = await supabase.auth.updateUser({
     data: {
       avatar: `${supabaseUrl}/storage/v1/object/public/avatars/${fileName}`,
     },
   });
-
-  // console.log(updatedUser);
 
   if (error2)
     throw new Error(

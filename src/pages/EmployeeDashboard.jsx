@@ -1,12 +1,13 @@
 import { Button } from "primereact/button";
 import { Envelope, UserCircleGear, UsersFour } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
-import DialogPopup from "../ui/DialogPopup";
 import { useUser } from "../features/users/useUser";
 import { useGetEmployee } from "../features/employees/useGetEmployee";
 import { useSearchParams } from "react-router-dom";
-import Holidays from "../ui/Holidays";
 import { Toast } from "primereact/toast";
+
+import DialogPopup from "../ui/DialogPopup";
+import Holidays from "../ui/Holidays";
 import TimeAndDate from "../ui/TimeAndDate";
 import Loader from "../ui/Loader";
 import EmployeeTable from "../ui/EmployeeTable";
@@ -125,7 +126,7 @@ function EmployeeDashboard() {
             </div>
           </div>
 
-          {/* Time */}
+          {/* Time and Date */}
           <div className="col-12 lg:col-4">
             <div className="grid">
               <div className="col-12">
