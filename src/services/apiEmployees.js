@@ -124,25 +124,64 @@ export async function createLeaveRequest(leaveRequest) {
 
   // Step 3: Create a notification for the leave request creation
   // previous message - New Leave request submitted by employee ${employee_id}
-  const notificationMessage = `New leave request submitted by ${employee_name
+  const employeeNotificationMessage = `New leave request submitted by ${employee_name
     .split(" ")
     .at(0)}`;
 
   // Insert notification into the notifications table
-  const { error: notificationError } = await supabase
+  const { error: employeeNotificationError } = await supabase
     .from("notifications")
     .insert([
       {
         employee_id,
         leave_request_id: data[0].id, // assuming the data returned is an array with the inserted leave request
-        message: notificationMessage,
+        message: employeeNotificationMessage,
         is_read: false,
       },
     ]);
 
-  if (notificationError)
+  if (employeeNotificationError)
     throw new Error(
-      `There was a problem creating this notification - ${notificationError.message}`
+      `There was a problem creating this notification - ${employeeNotificationError.message}`
+    );
+
+  // Step 5: Fetch the manager (assuming only one manager in the system for now)
+  const { data: managerData, error: managerError } = await supabase
+    .from("employees")
+    .select("id") // We just need the manager's ID
+    .eq("role", "Manager");
+
+  if (managerError) {
+    throw new Error("Error fetching manager: " + managerError.message);
+  }
+
+  // Check if we have any managers
+  if (!managerData || managerData.length === 0) {
+    throw new Error("No managers found in the system.");
+  }
+
+  const allManagerIds = managerData.map((manager) => manager.id);
+
+  // Step 6: Create a notification for the manager
+  const managerNotificationMessage = `${employee_name} has submitted a new leave request.`;
+
+  // Loop through all the manager IDs and create a notification for each manager
+  const notifications = allManagerIds.map((manager_id) => {
+    return {
+      employee_id: manager_id, // Send the notification to each manager
+      leave_request_id: data[0].id, // Reference to the created leave request
+      message: managerNotificationMessage,
+      is_read: false,
+    };
+  });
+
+  const { error: managerNotificationError } = await supabase
+    .from("notifications")
+    .insert(notifications);
+
+  if (managerNotificationError)
+    throw new Error(
+      `There was a problem creating the manager notification - ${managerNotificationError.message}`
     );
 
   return data;
