@@ -18,12 +18,12 @@ function TimeAndDate() {
     dateNow
   );
   return (
-    <div className="flex align-items-baseline py-2 border-round-3xl transition-all transition-duration-300 transition-ease-out shadow-2 bg-white justify-content-center">
+    <div className="flex align-items-center py-2 border-round-3xl transition-all transition-duration-300 transition-ease-out shadow-2 bg-white justify-content-center">
       <div>
         <p className="text-gray-600">Current time</p>
         <p className="font-bold">{currentDateAndTime}</p>
       </div>
-      <Calendar size={32} className="pt-2" />
+      <Calendar size={32} className="mb-5" />
     </div>
   );
 }
