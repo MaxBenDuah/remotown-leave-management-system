@@ -8,8 +8,6 @@ import { useSearchParams } from "react-router-dom";
 import { Button } from "primereact/button";
 import { FloatLabel } from "primereact/floatlabel";
 
-// setEditId
-
 function UpdateLeaveRequest({ leave, updateToast, onUpdate }) {
   const [startDate, setStartDate] = useState(leave.start_date);
   const [endDate, setEndDate] = useState(leave.end_date);
@@ -20,12 +18,7 @@ function UpdateLeaveRequest({ leave, updateToast, onUpdate }) {
   const [searchParams] = useSearchParams();
   const editId = Number(searchParams.get("editId"));
 
-  const {
-    mutate: updateLeaveRequest,
-    isPending,
-    // isError: isError2,
-    // error: error2,
-  } = useUpdateLeaveRequest();
+  const { mutate: updateLeaveRequest, isPending } = useUpdateLeaveRequest();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -42,7 +35,6 @@ function UpdateLeaveRequest({ leave, updateToast, onUpdate }) {
       {
         onSuccess: (updatedLeave) => {
           onUpdate(updatedLeave);
-          // setEditId(null);
           updateToast.current.show({
             severity: "success",
             summary: "Success",
