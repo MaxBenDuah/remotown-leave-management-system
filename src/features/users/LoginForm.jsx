@@ -113,7 +113,7 @@ function LoginForm() {
           <div className="col-12 p-8 lg:col-6">
             <form onSubmit={handleSubmit}>
               <div className="pb-4">
-                <img src="/logo.svg" alt="Logo" />
+                <img src="/remotownLogo.svg" alt="Logo" />
               </div>
               <h2 className="mb-4 font-medium text-3xl">Welcome Back</h2>
               <p className="mb-6">
