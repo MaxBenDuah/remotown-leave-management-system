@@ -164,8 +164,6 @@ function LoginForm() {
               <div>
                 <Button
                   label="Sign In"
-                  icon="pi pi-user"
-                  iconPos="left"
                   className="w-full"
                   loading={isPending}
                 />

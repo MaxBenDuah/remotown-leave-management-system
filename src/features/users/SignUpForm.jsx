@@ -231,8 +231,6 @@ function SignUpForm() {
                 <div>
                   <Button
                     label="Submit"
-                    icon="pi pi-user"
-                    iconPos="left"
                     className="w-full"
                     type="submit"
                     loading={isPending}
