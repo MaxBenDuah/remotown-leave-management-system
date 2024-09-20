@@ -6,7 +6,6 @@ import { useUserDataContext } from "../../contexts/UserContext";
 import { InputText } from "primereact/inputtext";
 import { Link } from "react-router-dom";
 import { Password } from "primereact/password";
-import { Divider } from "primereact/divider";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import { FloatLabel } from "primereact/floatlabel";
@@ -21,20 +20,6 @@ function LoginForm() {
   const navigate = useNavigate();
   const { dispatch } = useUserDataContext();
   const toast = useRef(null);
-
-  const header = <div className="font-bold mb-3">Pick a password</div>;
-  const footer = (
-    <>
-      <Divider />
-      <p className="mt-2">Suggestions</p>
-      <ul className="pl-2 ml-2 mt-0 line-height-3">
-        <li>At least one lowercase</li>
-        <li>At least one uppercase</li>
-        <li>At least one numeric</li>
-        <li>Minimum 8 characters</li>
-      </ul>
-    </>
-  );
 
   const { profile } = useGetCurrentUser(userProfile);
 
@@ -146,8 +131,6 @@ function LoginForm() {
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full"
                     toggleMask
-                    header={header}
-                    footer={footer}
                   />
                   <label htmlFor="password">Password</label>
                 </FloatLabel>
