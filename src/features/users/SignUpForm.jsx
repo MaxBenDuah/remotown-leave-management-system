@@ -211,7 +211,9 @@ function SignUpForm() {
                   <InputText
                     id="department"
                     value={department}
-                    onChange={(e) => setDepartment(e.target.value)}
+                    onChange={(e) =>
+                      setDepartment(e.target.value.toUpperCase())
+                    }
                     required
                   />
                   <label htmlFor="department">Department</label>
