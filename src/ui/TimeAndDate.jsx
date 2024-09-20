@@ -18,12 +18,15 @@ function TimeAndDate() {
     dateNow
   );
   return (
-    <div className="flex align-items-center py-2 border-round-3xl transition-all transition-duration-300 transition-ease-out shadow-2 bg-white justify-content-center">
-      <div>
-        <p className="text-gray-600">Current time</p>
-        <p className="font-bold">{currentDateAndTime}</p>
+    <div
+      className="flex align-items-start py-3 border-round-lg shadow-2 bg-white justify-content-center"
+      style={{ padding: "0 0.5rem" }}
+    >
+      <div className="flex flex-column gap-4">
+        <p className="text-gray-600 m-0">Current time</p>
+        <p className="font-bold text-xs m-0">{currentDateAndTime}</p>
       </div>
-      <Calendar size={32} className="mb-5" />
+      <Calendar size={24} />
     </div>
   );
 }
