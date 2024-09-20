@@ -227,7 +227,7 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
   };
 
   return (
-    <div className="border-round-3xl overflow-hidden shadow-2 bg-white">
+    <div className="border-round-lg overflow-hidden shadow-2 bg-white">
       <div className="card">
         <Toolbar className="mb-4" end={rightToolbarTemplate}></Toolbar>
         <ConfirmDialog />
@@ -318,6 +318,7 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} leave requests"
             globalFilter={globalFilter}
             header={header}
+            style={{ height: "326px", overflow: "scroll" }}
           >
             <Column selectionMode="multiple" exportable={false}></Column>
             <Column
@@ -325,7 +326,7 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
               header="Created At"
               sortable
               dataType="date"
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={createdAtDateBodyTemplate}
             />
             <Column
@@ -333,7 +334,7 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
               header="From"
               sortable
               dataType="date"
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={startDateBodyTemplate}
             />
             <Column
@@ -341,33 +342,33 @@ function EmployeeTable({ data, deleteToast, updateToast }) {
               header="To"
               sortable
               dataType="date"
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={endDateBodyTemplate}
             />
             <Column
               field="leave_type"
               header="Leave Type"
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
             ></Column>
             <Column
               field="status"
               header="Status"
               body={statusBodyTemplate}
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
             ></Column>
             <Column
               field="comments"
               header="Reason"
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={reasonBodyTemplate}
             />
             <Column
               body={actionBodyTemplate}
               exportable={false}
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
             ></Column>
           </DataTable>
         )}
