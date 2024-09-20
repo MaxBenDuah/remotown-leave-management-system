@@ -80,7 +80,7 @@ function InnerHeading() {
 
           {/* Profile picture, Name, and Caretdown */}
           <div
-            className="flex align-items-center gap-2 px-4 py-2 hover:surface-200 border-round-lg transition-all transition-duration-300 transition-ease-out cursor-pointer"
+            className="flex align-items-center gap-2 px-2 py-2 md:px-4 hover:surface-200 border-round-lg transition-all transition-duration-300 transition-ease-out cursor-pointer"
             onClick={(event) => menuRight.current.toggle(event)}
             aria-controls="popup_menu_right"
             aria-haspopup
@@ -97,7 +97,7 @@ function InnerHeading() {
             />
 
             <div className="flex align-items-center gap-2">
-              <p className="text-lg">{name}</p>
+              <p className="text-lg">{name.split(" ").at(0)}</p>
               <CaretDown size={24} weight="light" />
             </div>
           </div>
