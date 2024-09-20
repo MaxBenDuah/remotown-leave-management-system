@@ -48,13 +48,13 @@ function EmployeeDashboard() {
       <Toast ref={updateToast} position="top-center" />
       <div className="pt-4" style={{ background: "#F9FAFB" }}>
         <div className="grid nested-grid">
-          <div className="col-12 lg:col-8">
+          <div className="col-12 lg:col-10">
             <div className="grid">
               <div
                 className="col-12 md:col-6 text-center"
                 style={{ background: "#F9FAFB" }}
               >
-                <div className="border-round-3xl shadow-2 bg-white flex flex-column gap-2 p-2">
+                <div className="border-round-lg shadow-2 bg-white flex flex-column gap-2 p-2">
                   <h3 className="text-3xl font-medium m-0">
                     Welcome, {userName.split(" ").at(0)}!
                   </h3>
@@ -66,27 +66,27 @@ function EmployeeDashboard() {
               </div>
 
               <div className="col-12 md:col-6 border-round-md">
-                <div className="flex justify-content-center p-2 gap-2 border-round-3xl shadow-2 bg-white">
+                <div className="flex justify-content-center p-2 md:gap-2 border-round-lg shadow-2 bg-white">
                   <div>
-                    <p className="flex flex-column">
+                    <p className="flex flex-column gap-2">
                       <span className="text-center">
-                        <Envelope size={32} color="#050505" />{" "}
+                        <Envelope size={24} color="#050505" />{" "}
                       </span>
                       <span className="text-gray-500 text-center">{email}</span>
                     </p>
                   </div>
                   <div>
-                    <p className="flex flex-column">
+                    <p className="flex flex-column gap-2">
                       <span className="text-center">
-                        <UserCircleGear size={32} color="#050505" />{" "}
+                        <UserCircleGear size={24} color="#050505" />{" "}
                       </span>
                       <span className="text-gray-500 text-center">{role}</span>
                     </p>
                   </div>
                   <div>
-                    <p className="flex flex-column">
+                    <p className="flex flex-column gap-2">
                       <span className="text-center">
-                        <UsersFour size={32} color="#050505" />{" "}
+                        <UsersFour size={24} color="#050505" />{" "}
                       </span>
                       <span className="text-gray-500 text-center">
                         {department}
@@ -100,7 +100,7 @@ function EmployeeDashboard() {
                 <div className="flex justify-content-between align-items-center pb-4">
                   <h2 className="text-xl font-medium">All Leave Requests</h2>
                   <Button
-                    label="Apply Leave"
+                    label="Request Leave"
                     icon="pi pi-plus"
                     raised
                     size="small"
@@ -127,7 +127,7 @@ function EmployeeDashboard() {
           </div>
 
           {/* Time and Date */}
-          <div className="col-12 lg:col-4">
+          <div className="col-12 lg:col-2">
             <div className="grid">
               <div className="col-12">
                 <TimeAndDate />
