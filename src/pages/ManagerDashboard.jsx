@@ -46,14 +46,14 @@ function ManagerDashboard() {
     <>
       <div className="pt-4" style={{ background: "#F9FAFB" }}>
         <div className="grid nested-grid">
-          <div className="col-12 lg:col-8">
+          <div className="col-12 lg:col-10">
             <div className="grid">
               <div
                 className="col-12 md:col-6 text-center"
                 style={{ background: "#F9FAFB" }}
               >
                 <div
-                  className="border-round-3xl shadow-2 bg-white"
+                  className="border-round-lg shadow-2 bg-white"
                   style={{ padding: "13.2px" }}
                 >
                   <h3 className="text-3xl font-medium m-0">
@@ -67,27 +67,27 @@ function ManagerDashboard() {
               </div>
 
               <div className="col-12 md:col-6 border-round-md">
-                <div className="flex justify-content-center p-2 gap-2 border-round-3xl shadow-2 bg-white">
+                <div className="flex justify-content-center p-2 gap-6 border-round-lg shadow-2 bg-white">
                   <div>
-                    <p className="flex flex-column">
+                    <p className="flex flex-column gap-2">
                       <span className="text-center">
-                        <Envelope size={32} color="#050505" />{" "}
+                        <Envelope size={24} color="#050505" />{" "}
                       </span>
                       <span className="text-gray-500 text-center">{email}</span>
                     </p>
                   </div>
                   <div>
-                    <p className="flex flex-column">
+                    <p className="flex flex-column gap-2">
                       <span className="text-center">
-                        <UserCircleGear size={32} color="#050505" />{" "}
+                        <UserCircleGear size={24} color="#050505" />{" "}
                       </span>
                       <span className="text-gray-500 text-center">{role}</span>
                     </p>
                   </div>
                   <div>
-                    <p className="flex flex-column">
+                    <p className="flex flex-column gap-2">
                       <span className="text-center">
-                        <UsersFour size={32} color="#050505" />{" "}
+                        <UsersFour size={24} color="#050505" />{" "}
                       </span>
                       <span className="text-gray-500 text-center">
                         {department}
@@ -103,7 +103,7 @@ function ManagerDashboard() {
               </div>
             </div>
           </div>
-          <div className="col-12 lg:col-4">
+          <div className="col-12 lg:col-2">
             <div className="grid">
               <div className="col-12">
                 <TimeAndDate />
