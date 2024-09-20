@@ -98,6 +98,7 @@ function DialogPopup({ setVisible, visible, data, toast }) {
       <Dialog
         visible={visible}
         style={{ width: "40vw" }}
+        breakpoints={{ "960px": "75vw", "641px": "90vw" }}
         onHide={() => {
           if (!visible) return;
           setVisible(false);
