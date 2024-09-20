@@ -6,7 +6,6 @@ function formatDate(date) {
     year: "numeric",
     day: "numeric",
     month: "numeric",
-    weekday: "long",
   };
   const formattedDate = new Intl.DateTimeFormat("de-DE", options).format(
     newDate
@@ -18,12 +17,17 @@ function formatDate(date) {
 function HolidayItem({ holiday }) {
   return (
     <>
-      <li className="flex justify-content-between align-items-center">
+      <li
+        className="flex justify-content-between align-items-center"
+        style={{ padding: "0 0.5rem" }}
+      >
         <div className="flex flex-column gap-1">
-          <p className="font-semibold">{formatDate(holiday.date.iso)}</p>
-          <p className="text-gray-600">{holiday.primary_type}</p>
+          <p className="font-semibold text-xs m-0">
+            {formatDate(holiday.date.iso)}
+          </p>
+          <p className="text-gray-600 text-xs m-0">{holiday.primary_type}</p>
         </div>
-        <p className="font-semibold ">{holiday.name}</p>
+        <p className="font-semibold text-xs m-0 text-right">{holiday.name}</p>
       </li>
       <Divider />
     </>
