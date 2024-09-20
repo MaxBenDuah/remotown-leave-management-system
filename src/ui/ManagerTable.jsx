@@ -179,7 +179,7 @@ function ManagerTable({ allLeaveRequest }) {
   }
 
   return (
-    <div className="border-round-3xl overflow-hidden shadow-2 bg-white">
+    <div className="border-round-lg overflow-hidden shadow-2 bg-white">
       <Toast ref={toast} />
       <div className="card">
         <Toolbar className="mb-4" end={rightToolbarTemplate}></Toolbar>
@@ -281,6 +281,7 @@ function ManagerTable({ allLeaveRequest }) {
             globalFilter={globalFilter}
             header={header}
             stripedRows
+            style={{ height: "410px", overflow: "scroll" }}
           >
             <Column selectionMode="multiple" exportable={false}></Column>
             <Column
@@ -288,14 +289,14 @@ function ManagerTable({ allLeaveRequest }) {
               header="Name"
               body={nameBodyTemplate}
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
             ></Column>
             <Column
               field="created_at"
               header="Created At"
               sortable
               dataType="date"
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={createdAtDateBodyTemplate}
               filterElement={dateFilterTemplate}
             />
@@ -304,7 +305,7 @@ function ManagerTable({ allLeaveRequest }) {
               header="From"
               sortable
               dataType="date"
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={startDateBodyTemplate}
               filterElement={dateFilterTemplate}
             />
@@ -313,7 +314,7 @@ function ManagerTable({ allLeaveRequest }) {
               header="To"
               sortable
               dataType="date"
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={endDateBodyTemplate}
               filterElement={dateFilterTemplate}
             />
@@ -321,20 +322,20 @@ function ManagerTable({ allLeaveRequest }) {
               field="leave_type"
               header="Leave Type"
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
             ></Column>
             <Column
               field="status"
               header="Status"
               body={statusBodyTemplate}
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
             ></Column>
             <Column
               field="comments"
               header="Reason"
               sortable
-              style={{ minWidth: "12rem" }}
+              style={{ minWidth: "10rem" }}
               body={reasonBodyTemplate}
             />
           </DataTable>
