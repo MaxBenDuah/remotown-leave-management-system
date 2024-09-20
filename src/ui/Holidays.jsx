@@ -15,12 +15,11 @@ function Holidays() {
   } = data;
 
   return (
-    <div className="shadow-2 border-round-3xl pt-2 bg-white">
-      <h3 className="text-center">Germany: Upcoming Holidays & Observances</h3>
-      <ul
-        className="overflow-scroll h-screen list-none"
-        style={{ padding: "0 2rem" }}
-      >
+    <div className="shadow-2 border-round-lg pt-2 bg-white">
+      <h3 className="text-center text-sm" style={{ padding: "0 0.5rem" }}>
+        Germany: Upcoming Holidays & Observances
+      </h3>
+      <ul className="overflow-scroll list-none p-0 h-28rem m-0">
         {holidays?.map((holiday) => (
           <HolidayItem key={crypto.randomUUID()} holiday={holiday} />
         ))}
