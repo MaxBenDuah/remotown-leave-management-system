@@ -13,8 +13,8 @@ import { FloatLabel } from "primereact/floatlabel";
 import Loader from "../../ui/Loader";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("john.doe@example.com");
+  const [password, setPassword] = useState("87654321");
   const [userProfile, setUserProfile] = useState(null);
   const { mutate: login, isPending } = useLogin();
   const navigate = useNavigate();
