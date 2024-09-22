@@ -47,15 +47,15 @@ function ForgotPasswordForm() {
   return (
     <>
       <Toast ref={toast} position="top-center" />
-      <div className="flex flex-wrap">
-        <div className="">
+      <div className="grid">
+        <div className="col-12 lg:col-6">
           <img
             src="/forgot-password-bg.png"
             alt="Forgot Password"
-            className=""
+            className="w-full"
           />
         </div>
-        <div className="flex-1 px-8 pt-8">
+        <div className="col-12 lg:col-6 px-8 pt-8">
           <div className="">
             <div>
               <h2>Reset Password</h2>
