@@ -5,10 +5,15 @@ import { Divider } from "primereact/divider";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import { FloatLabel } from "primereact/floatlabel";
+import { useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 function UpdateUserPassword() {
   const [password, setPassword] = useState("");
   const toast = useRef(null);
+  const queryClient = useQueryClient();
+  const data = queryClient.getQueryData(["user"]);
+  const navigate = useNavigate();
 
   const header = <div className="font-bold mb-3">Pick a password</div>;
   const footer = (
@@ -41,14 +46,18 @@ function UpdateUserPassword() {
     updatePassword(
       { password },
       {
-        onSuccess: () => {
+        onSuccess: async () => {
           toast.current.show({
             severity: "success",
             summary: "Success",
             detail: "Password updated successfully!",
-            life: 5000,
+            life: 4000,
           });
           setPassword("");
+          await new Promise((resolve) => setTimeout(resolve, 5000));
+          if (!data) {
+            navigate("/login");
+          }
         },
         onError: (error) => {
           toast.current.show({
