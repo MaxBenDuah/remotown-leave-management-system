@@ -103,7 +103,6 @@ function EmployeeDashboard() {
                     label="Request Leave"
                     icon="pi pi-plus"
                     raised
-                    size="small"
                     onClick={() => setVisible((prev) => !prev)}
                   />
                 </div>

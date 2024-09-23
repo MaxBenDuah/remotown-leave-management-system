@@ -67,7 +67,7 @@ function ManagerDashboard() {
               </div>
 
               <div className="col-12 md:col-6 border-round-md">
-                <div className="flex justify-content-center p-2 gap-6 border-round-lg shadow-2 bg-white">
+                <div className="hidden md:flex justify-content-center p-2 gap-6 border-round-lg shadow-2 bg-white">
                   <div>
                     <p className="flex flex-column gap-2">
                       <span className="text-center">
