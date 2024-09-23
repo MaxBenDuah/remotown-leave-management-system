@@ -97,14 +97,16 @@ function EmployeeDashboard() {
               </div>
 
               <div className="col-12 border-round-md">
-                <div className="flex justify-content-between align-items-center pb-4">
+                <div className="flex flex-column gap-3 md:flex-row justify-content-between align-items-center pb-4">
                   <h2 className="text-xl font-medium">All Leave Requests</h2>
-                  <Button
-                    label="Request Leave"
-                    icon="pi pi-plus"
-                    raised
-                    onClick={() => setVisible((prev) => !prev)}
-                  />
+                  <div>
+                    <Button
+                      label="Request Leave"
+                      icon="pi pi-plus"
+                      raised
+                      onClick={() => setVisible((prev) => !prev)}
+                    />
+                  </div>
                 </div>
 
                 {visible && (
