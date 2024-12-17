@@ -20,13 +20,13 @@ This system is ideal for businesses that want to digitize their leave management
 
 ### User Account
 
-- **Email:** user@example.com
-- **Password:** user1234
+- **Email:** john.doe@example.com
+- **Password:** 87654321
 
 ### Management Account
 
-- **Email:** manager@example.com
-- **Password:** manager1234
+- **Email:** kelly.shanti@example.com
+- **Password:** 44444444
 
 ### Instructions
 
