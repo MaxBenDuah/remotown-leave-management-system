@@ -16,7 +16,22 @@ This system is ideal for businesses that want to digitize their leave management
 - Holiday Calendar: Displays upcoming holidays to help employees plan leave.
 - Profile Management: Users can update their personal details, including name, password, and profile picture.
 
-## Demo
+## Demo Accounts
+
+### User Account
+
+- **Email:** user@example.com
+- **Password:** user1234
+
+### Management Account
+
+- **Email:** manager@example.com
+- **Password:** manager1234
+
+### Instructions
+
+1. Navigate to the login page of the application.
+2. Enter the email and password for the desired role.
 
 https://remotown-leave-management-system-mbd.netlify.app/
 
